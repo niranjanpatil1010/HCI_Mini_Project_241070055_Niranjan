@@ -797,9 +797,7 @@ html.js body:not(.go) .w>span,html.js body:not(.go) .hero .badge,html.js body:no
 
 <script>
 // TODO: replace these with your real profile links
-const LINKS={linkedin:'https://www.linkedin.com/',github:'https://github.com/',resume:'#'};
-document.getElementById('li').href=LINKS.linkedin;
-document.getElementById('gh').href=LINKS.github;
+
 
 const resumeButton = document.getElementById('resume');
 const resumeDialog = document.getElementById('resume-preview');
@@ -1187,8 +1185,7 @@ SEC.forEach(x=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$
  $('#susr').onclick=()=>{f.reset();$('#susout').textContent=''};
  $('#sus').addEventListener('click',e=>{if(e.target.id==='susclr'){L=[];try{localStorage.removeItem('sus')}catch(x){}list()}if(e.target===e.currentTarget)e.currentTarget.close()})})();
 })();
-</script>
-<script>
+
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("resume");
   const dialog = document.getElementById("resume-preview");
