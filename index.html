@@ -549,9 +549,9 @@ html.js body:not(.go) .w>span,html.js body:not(.go) .hero .badge,html.js body:no
    <div class="cta">
     <a class="btn" href="#projects">See my projects</a>
     <a class="btn ghost" href="#contact">Get in touch</a>
-    <a class="btn ghost" href="#resume-preview" id="resume">
+    <button class="btn ghost" id="resume" type="button">
   View / Download Resume
-</a>
+</button>
    </div>
   </div>
   <div class="stage" id="stage">
@@ -1187,6 +1187,26 @@ SEC.forEach(x=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$
  $('#susr').onclick=()=>{f.reset();$('#susout').textContent=''};
  $('#sus').addEventListener('click',e=>{if(e.target.id==='susclr'){L=[];try{localStorage.removeItem('sus')}catch(x){}list()}if(e.target===e.currentTarget)e.currentTarget.close()})})();
 })();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("resume");
+  const dialog = document.getElementById("resume-preview");
+  const closeBtn = document.getElementById("close-resume");
+
+  if (!btn || !dialog || !closeBtn) {
+    console.error("Resume button/dialog element missing");
+    return;
+  }
+
+  btn.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  closeBtn.addEventListener("click", () => {
+    dialog.close();
+  });
+});
 </script>
 </body>
 </html>
