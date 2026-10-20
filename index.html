@@ -371,6 +371,145 @@ html.js body:not(.go) .w>span,html.js body:not(.go) .hero .badge,html.js body:no
     text-decoration: none;
 }
 
+
+/* Fix Achievements section on mobile */
+@media (max-width: 820px) {
+  #achievements .ach {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  #achievements .ach > .card,
+  #achievements .ach .hero-a,
+  #achievements .ach .genai {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-width: 0;
+    width: 100%;
+  }
+
+  #achievements .ach .hero-a {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+    padding: 20px;
+  }
+
+  #achievements .ach .txt,
+  #achievements .ach .vis {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #achievements .ach h3,
+  #achievements .ach p {
+    overflow-wrap: anywhere;
+  }
+
+  #achievements .astro {
+    width: min(220px, 100%);
+    height: auto;
+  }
+
+  #achievements .lv {
+    flex-wrap: wrap;
+  }
+
+  #achievements .genai {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #achievements .hexes {
+    gap: 16px;
+  }
+
+  #achievements .hx {
+    max-width: 100%;
+  }
+}
+#stage {
+  position: relative;
+  isolation: isolate;
+}
+
+#gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#stage .term {
+  z-index: 2;
+}
+
+
+/* Hero 3D model + terminal visibility fix */
+#stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+#stage #gl {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#stage .orb {
+  z-index: 0;
+  pointer-events: none;
+}
+
+#stage .term {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  z-index: 2;
+  width: min(270px, 74%);
+}
+
+#stage .hint3d {
+  z-index: 3;
+}
+
+
+
+/* Mobile-only hero layout fix */
+@media (max-width: 600px) {
+  #stage {
+    height: 360px;
+    min-height: 360px;
+    overflow: hidden;
+  }
+
+  #stage .term {
+    width: 190px;
+    max-width: 62%;
+    left: 0;
+    bottom: 0;
+    font-size: 0.72rem;
+    padding: 12px;
+  }
+
+  #stage .term p {
+    margin-bottom: 0.5em;
+    overflow-wrap: anywhere;
+  }
+
+  #stage .hint3d {
+    font-size: 0.65rem;
+    right: 0;
+    top: 0;
+    padding: 4px 7px;
+  }
+}
+
 </style>
 </head>
 <body>
